@@ -1,4 +1,76 @@
+$primary-color: #efefef;
+$flex-display: flex;
+$outer-border: 2px solid black;
+$font-family: Roboto, sans-serif;
+$thin: 100;
 
+* {
+  box-sizing: border-box;  
+  font-family: $font-family;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: $flex-display;
+}
+
+input {
+    font-weight: $thin;
+}
+.outerContainer {
+    display: $flex-display;
+    flex-flow: wrap;
+    height: 100%;
+    width: 100%;
+    border: $outer-border;
+}
+
+.listHeader {
+    display: $flex-display;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    background-color:yellow;
+    padding: 0px 20px 0px 20px;
+}
+
+.listContainer {
+    display: $flex-display;
+    height: 80%;
+    width: 100%;
+    background-color: orange;
+}
+
+.listStatus {
+    display: $flex-display;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    background-color: cyan;
+    padding: 0px 20px 0px 20px;
+}
+
+input[type="color"] {
+	-webkit-appearance: none;
+	border: none;
+	width: 32px;
+	height: 32px;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+}
 @media only screen and (max-width: 400px){
 
 }

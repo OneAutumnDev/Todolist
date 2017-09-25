@@ -5,10 +5,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700" rel="stylesheet">
+        <script src="https://use.fontawesome.com/f02627fdb8.js"></script>
         <link rel="stylesheet" href="assets/css/styles.css">
     </head>
     <body>
-        
+        <div class="outerContainer">
+            <div class="listHeader">
+                <div><input type="text" name="newTask" placeholder="Enter a new task!"/></div> <!-- Span shows example text for list. when you click to add new, clear the field and allow user to type in a new todo -->
+                <div><i class="fa fa-plus" aria-hidden="true"></i></div> <!-- Plus icon on the right side to add a new task. -->
+            </div>
+            <div class="listContainer">
+                <!-- Main body where each "todo" will appear once it is created. -->
+            </div>
+            <div class="listStatus">
+                <!-- At the bottom this bar will keep track of how many "todos" are active. -->
+                <div>Active: <span>0</span></div>
+                <!-- Tabs to select "all", "active", and "completed". -->
+                <div>Completed: <span>0</span></div>
+                <!-- Button to clear all completed tasks from the list. -->
+                <button class="clearALl" type="button">Clear Tasks</button>
+                <!-- Color Picker Selector. -->
+                <input type="color" name="colorPicker" value="#000000"/>
+            </div>
+        </div>
         <script type="text/javascript" src="assets/js/todo.js"></script>
     </body>
 </html>
