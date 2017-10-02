@@ -11,14 +11,25 @@
     </head>
     <body>
         <div class="outerContainer">
+            <!-- Section 1, List Title and Add new input -->
             <div class="listHeader">
                 <div>Todo List</div>
                 <div><i class="fa fa-plus" aria-hidden="true"></i></div> <!-- Plus icon on the right side to add a new task. -->
             </div>
-            <div class="inputContainer"><input type="text" name="newTask" placeholder="Enter a new task!"/></div> <!-- Span shows example text for list. when you click to add new, clear the field and allow user to type in a new todo -->
+            <!-- Section 2, Input Field -->
+            <div class="inputContainer">
+                <input type="text" name="newTask" placeholder="Enter a new task!"/>
+            </div> <!-- Span shows example text for list. when you click to add new, clear the field and allow user to type in a new todo -->
+            <!-- Section 3, Input list -->
             <div class="listContainer">
                 <!-- Main body where each "todo" will appear once it is created. -->
+                <ul>
+                    <li><span>X </span>Walk the turtle through the loop</li><!-- Example list item 1 -->
+                    <li><span>X </span>Get an autograph from "Frank the Tank"</li><!-- Example list item 2 -->
+                    <li><span>X </span>Direct the next blockbuster film starring Adam Sandler</li><!-- Example list item 3 -->
+                </ul>
             </div>
+            <!-- Section 4, Status bar -->
             <div class="listStatus">
                 <!-- At the bottom this bar will keep track of how many "todos" are active. -->
                 <div>Active: <span>0</span></div>

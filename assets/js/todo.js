@@ -8,7 +8,16 @@
 //User can change the main style color "$primary-color" by selecting the color picker.
 //(function(){ //IIFE: Immediately Invoked Function Expression. 
 function init(){
+    let newInput = document.querySelector(".inputContainer input");
+    let fieldToggle = document.querySelector(".fa-plus");
 
+    fieldToggle.addEventListener("click", function(){
+        let listItem = document.createElement("li");
+        let ulList = document.querySelector("ul");
+        listItem.innerHTML = "<span>X </span>WHOLE BUNCH OF ITEMS";
+        ulList.appendChild(listItem);
+        console.log(1+1);
+    });
 }
 init();
 //})();
