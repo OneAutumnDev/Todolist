@@ -10,13 +10,21 @@
 function init(){
     let newInput = document.querySelector(".inputContainer input");
     let fieldToggle = document.querySelector(".fa-plus");
+    
 
-    fieldToggle.addEventListener("click", function(){
+    newInput.addEventListener("keypress", function(event){
         let listItem = document.createElement("li");
         let ulList = document.querySelector("ul");
-        listItem.innerHTML = "<span>X </span>WHOLE BUNCH OF ITEMS";
-        ulList.appendChild(listItem);
-        console.log(1+1);
+        let newInputValue = newInput.value;
+        listItem.innerHTML = "<span>X </span>" + newInputValue;
+        if(event.keyCode === 13){
+            if(newInputValue === ""){
+                return;
+            } else {
+            ulList.appendChild(listItem);
+            newInput.value = "";
+            }
+        }
     });
 }
 init();
