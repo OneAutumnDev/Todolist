@@ -19,7 +19,7 @@ input {
   flex-flow: wrap;
   height: 100%;
   width: 100%;
-  border: 2px solid black; }
+  border: 5px solid black; }
 
 .listHeader {
   display: flex;
@@ -41,8 +41,7 @@ input[type="text"] {
   padding: 0px 20px; }
 
 .listContainer {
-  display: flex;
-  height: 85%;
+  min-height: 85%;
   width: 100%;
   padding: 0; }
 
@@ -62,7 +61,8 @@ ul {
   list-style: none;
   background: orange;
   margin: 0;
-  padding: 2%; }
+  padding: 2%;
+  max-height: 100%; }
 
 input[type="color"] {
   -webkit-appearance: none;

@@ -1,6 +1,6 @@
 $primary-color: #efefef;
 $flex-display: flex;
-$outer-border: 2px solid black;
+$outer-border: 5px solid black;
 $font-family: Roboto, sans-serif;
 $thin: 100;
 $max-width: 100%;
@@ -56,8 +56,7 @@ input[type="text"] {
 }
 
 .listContainer {
-    display: $flex-display;
-    height: 85%;
+    min-height: 85%;
     width: $max-width;
     padding: 0;
 }
@@ -80,6 +79,7 @@ ul {
     background: orange;
     margin: 0;
     padding: 2%;
+    max-height: 100%;
 }
 
 input[type="color"] {
