@@ -76,10 +76,18 @@ ul {
     width: $max-width;
     height: $max-height;
     list-style: none;
-    background: orange;
+    background: #fff;
     margin: 0;
     padding: 2%;
     max-height: 100%;
+}
+
+ul li {
+    background-color: #fff;
+}
+
+ul li:nth-child(2n) {
+    background-color: lightblue;
 }
 
 input[type="color"] {
