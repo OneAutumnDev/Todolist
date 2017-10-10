@@ -14,7 +14,7 @@ function init(){
     let newInput = document.querySelector(".inputContainer input");//Selector for the input
     let newList = []; //array where new tasks are pushed after input press enter.
 
-    
+    //Entire keypress event that happens when the event key is pressed
     newInput.addEventListener("keypress", function(event){
         let listItem = document.createElement("li");
         let ulList = document.querySelector("ul");
@@ -48,7 +48,18 @@ function init(){
     });
 
     inputToggle.addEventListener("click", function(){
-        inputContainer.style.display = "none";
+        let o = document.getElementsByClassName("inputContainer");
+        let x = o[0];
+        let y = window.getComputedStyle(x);
+        if(y.getPropertyValue("display") === "flex"){
+            console.log(y.getPropertyValue("display"));
+            inputContainer.style.display = "none";
+            console.log(y.getPropertyValue("display"));
+        } else if (y.getPropertyValue("display") === "none") {
+            console.log(y.getPropertyValue("display"));
+            inputContainer.style.display = "flex";
+            console.log(y.getPropertyValue("display"));
+        }
     });
 
 }

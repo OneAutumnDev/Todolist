@@ -85,4 +85,10 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 input[type="color"]::-webkit-color-swatch {
   border: none; }
 
+.fadeIn {
+  opacity: 1; }
+
+.fadeOut {
+  opacity: 0; }
+
 /*# sourceMappingURL=styles.css.map */
