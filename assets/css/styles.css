@@ -43,9 +43,10 @@ input[type="text"] {
   padding: 0px 20px; }
 
 .listContainer {
-  min-height: 85%;
+  height: 85%;
   width: 100%;
-  padding: 0; }
+  padding: 0;
+  overflow: scroll; }
 
 .listStatus {
   display: flex;

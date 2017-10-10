@@ -58,9 +58,10 @@ input[type="text"] {
 }
 
 .listContainer {
-    min-height: 85%;
+    height: 85%;
     width: $max-width;
     padding: 0;
+    overflow: scroll;
 }
 
 .listStatus {

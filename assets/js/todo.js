@@ -58,4 +58,3 @@ init();
 
 
 
-//Error note 1: When the list gets too long and we have to start scrolling, the black border becomes broken.
