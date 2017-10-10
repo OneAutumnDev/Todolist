@@ -61,7 +61,7 @@ input[type="text"] {
     height: 85%;
     width: $max-width;
     padding: 0;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .listStatus {
