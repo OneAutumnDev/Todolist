@@ -8,24 +8,54 @@
 //User can change the main style color "$primary-color" by selecting the color picker.
 //(function(){ //IIFE: Immediately Invoked Function Expression. 
 function init(){
-    let newInput = document.querySelector(".inputContainer input");
-    let fieldToggle = document.querySelector(".fa-plus");
-    
+    let listName = document.querySelector(".listHeader h1");//Selector for the <h1>Todo List</h1>
+    let inputToggle = document.querySelector(".listHeader i");//Selector for the "Plus Icon"
+    let inputContainer = document.querySelector(".inputContainer");//Selector for the inputContainer
+    let newInput = document.querySelector(".inputContainer input");//Selector for the input
+    let newList = []; //array where new tasks are pushed after input press enter.
 
+    
     newInput.addEventListener("keypress", function(event){
         let listItem = document.createElement("li");
         let ulList = document.querySelector("ul");
-        let newInputValue = newInput.value;
-        listItem.innerHTML = "<span>X </span>" + newInputValue;
+        let listLength = document.querySelectorAll("ul li");
+        let liFirstValue = document.querySelector("ul li");
+        listItem.innerHTML = "<span>X </span>" + newInput.value;
         if(event.keyCode === 13){
-            if(newInputValue === ""){
+            if(newInput.value === ""){
                 return;
-            } else {
-            ulList.appendChild(listItem);
-            newInput.value = "";
             }
+            /*
+            //A way to remove the inital list items without using forEach
+            if(newList.length === 0){
+                for(let i = 0; i < listLength.length; i++){
+                    ulList.removeChild(listLength[i]);   
+                    //ulList.removeChild(document.querySelector("ul li"));                   
+                }
+                newList.push(newInput.value);
+            }
+            */
+            if(newList.length === 0){
+                listLength.forEach(function(e){
+                    ulList.removeChild(e);
+                });
+            }
+            ulList.appendChild(listItem);
+            newList.push(newInput.value);
+            newInput.value = "";
+            listName.textContent = newList[0];   
         }
     });
+
+    inputToggle.addEventListener("click", function(){
+        inputContainer.style.display = "none";
+    });
+
 }
 init();
 //})();
+
+
+
+
+//Error note 1: When the list gets too long and we have to start scrolling, the black border becomes broken.

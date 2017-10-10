@@ -29,7 +29,9 @@ input {
     display: $flex-display;
     flex-flow: wrap;
     height: $max-height;
+    min-height: $max-height;
     width: $max-width;
+    min-width: $max-width;
     border: $outer-border;
 }
 
