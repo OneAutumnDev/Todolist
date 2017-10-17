@@ -47,6 +47,7 @@ function init(){
         }
     });
 
+    //Current work around for input toggle, need to change to CSS class to allow for transition effect
     inputToggle.addEventListener("click", function(){
         let o = document.getElementsByClassName("inputContainer");
         let x = o[0];

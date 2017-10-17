@@ -113,13 +113,40 @@ input[type="color"]::-webkit-color-swatch {
     
 }
 @media only screen and (min-width: 721px) and (max-width: 900px){
-    
+    .outerContainer {
+        display: $flex-display;
+        flex-flow: wrap;
+        height: 750px;
+        min-height: 750px;
+        width: 750px;
+        min-width: 750px;
+        border: $outer-border;
+        margin: auto;
+    }
 }
 @media only screen and (min-width: 901px) and (max-width: 1200px){
-    
+    .outerContainer {
+        display: $flex-display;
+        flex-flow: wrap;
+        height: 750px;
+        min-height: 750px;
+        width: 750px;
+        min-width: 750px;
+        border: $outer-border;
+        margin: auto;
+    }
 }
 @media only screen and (min-width: 1201px){
-    
+    .outerContainer {
+        display: $flex-display;
+        flex-flow: wrap;
+        height: 750px;
+        min-height: 750px;
+        width: 750px;
+        min-width: 750px;
+        border: $outer-border;
+        margin: auto;
+    }
 }
 
 .fadeIn {
