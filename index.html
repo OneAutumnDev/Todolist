@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
+        <title>Todo List</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700" rel="stylesheet">
         <script src="https://use.fontawesome.com/f02627fdb8.js"></script>
         <link rel="stylesheet" href="assets/css/styles.css">
@@ -12,35 +12,42 @@
     <body>
         <div class="outerContainer">
             <!-- Section 1, List Title and Add new input -->
-            <div class="listHeader">
-                <h1>Todo List</h1>
-                <i class="fa fa-plus" aria-hidden="true"></i> <!-- Plus icon on the right side to add a new task. -->
-            </div>
-            <!-- Section 2, Input Field -->
-            <div class="inputContainer">
+            <div class="listHeaderContainer">
+                <div class="listHeader">
+                    <h1>Todo List</h1>
+                    <i class="fa fa-plus" aria-hidden="true"></i> <!-- Plus icon on the right side to add a new task. -->
+                </div>
+                <!-- Section 2, Input Field -->
                 <input type="text" name="newTask" placeholder="Enter a new task!"/>
-            </div> <!-- Span shows example text for list. when you click to add new, clear the field and allow user to type in a new todo -->
-            <!-- Section 3, Input list -->
-            <div class="listContainer">
-                <!-- Main body where each "todo" will appear once it is created. -->
-                <ul>
-                    <li><span>X </span>Walk the turtle through the loop</li><!-- Example list item 1 -->
-                    <li><span>X </span>Get an autograph from "Frank the Tank"</li><!-- Example list item 2 -->
-                    <li><span>X </span>Direct the next blockbuster film starring Adam Sandler</li><!-- Example list item 3 -->
-                </ul>
+                <!-- Span shows example text for list. when you click to add new, clear the field and allow user to type in a new todo -->
+                <!-- Section 3, Input list -->
+                <div class="listContainer">
+                    <!-- Main body where each "todo" will appear once it is created. -->
+                    <ul>
+                        <li><span>X </span>Walk the turtle through the loop</li><!-- Example list item 1 -->
+                        <li><span>X </span>Get an autograph from "Frank the Tank"</li><!-- Example list item 2 -->
+                        <li><span>X </span>Direct the next blockbuster film starring Adam Sandler</li><!-- Example list item 3 -->
+                    </ul>
+                </div>
             </div>
-            <!-- Section 4, Status bar -->
-            <div class="listStatus">
-                <!-- At the bottom this bar will keep track of how many "todos" are active. -->
-                <div>Active: <span>0</span></div>
-                <!-- Tabs to select "all", "active", and "completed". -->
-                <div>Completed: <span>0</span></div>
-                <!-- Button to clear all completed tasks from the list. -->
-                <button class="clearALl" type="button">Clear Tasks</button>
-                <!-- Color Picker Selector. -->
-                <input type="color" name="colorPicker" value="#000000"/>
+            <div class="listStatusContainer">
+                <!-- Section 4, Status bar -->
+                <div class="listStatus">
+                    <!-- At the bottom this bar will keep track of how many "todos" are active. -->
+                    <div>Active: <span>0</span></div>
+                    <!-- Tabs to select "all", "active", and "completed". -->
+                    <div>Completed: <span>0</span></div>
+                    <!-- Button to clear all completed tasks from the list. -->
+                    <button class="clearALl" type="button">Clear Tasks</button>
+                    <!-- Color Picker Selector. -->
+                    <input type="color" name="colorPicker" value="#000000"/>
+                </div>
             </div>
         </div>
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
         <script type="text/javascript" src="assets/js/todo.js"></script>
     </body>
 </html>

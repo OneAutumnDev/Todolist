@@ -9,9 +9,7 @@
 //(function(){ //IIFE: Immediately Invoked Function Expression. 
 function init(){
     let listName = document.querySelector(".listHeader h1");//Selector for the <h1>Todo List</h1>
-    let inputToggle = document.querySelector(".listHeader i");//Selector for the "Plus Icon"
-    let inputContainer = document.querySelector(".inputContainer");//Selector for the inputContainer
-    let newInput = document.querySelector(".inputContainer input");//Selector for the input
+    let newInput = document.querySelector(" input");//Selector for the input
     let newList = []; //array where new tasks are pushed after input press enter.
 
     //Entire keypress event that happens when the event key is pressed
@@ -47,21 +45,13 @@ function init(){
         }
     });
 
-    //Current work around for input toggle, need to change to CSS class to allow for transition effect
-    inputToggle.addEventListener("click", function(){
-        let o = document.getElementsByClassName("inputContainer");
-        let x = o[0];
-        let y = window.getComputedStyle(x);
-        if(y.getPropertyValue("display") === "flex"){
-            console.log(y.getPropertyValue("display"));
-            inputContainer.style.display = "none";
-            console.log(y.getPropertyValue("display"));
-        } else if (y.getPropertyValue("display") === "none") {
-            console.log(y.getPropertyValue("display"));
-            inputContainer.style.display = "flex";
-            console.log(y.getPropertyValue("display"));
-        }
+    //input Toggle
+    $(".fa-plus").click(function(){
+        $("input[type='text']").fadeToggle()
     });
+
+    //ClearAll
+
 
 }
 init();
