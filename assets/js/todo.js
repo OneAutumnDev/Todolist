@@ -51,6 +51,11 @@ function init(){
     });
 
     //ClearAll
+    $(".clearAll").click(function(){
+        newList = [];
+        $("ul").empty();
+        listName.textContent = "Todo List";
+    });
 
 
 }
