@@ -23,22 +23,20 @@ input:focus {
   background-color: #fff;
   outline: none; }
 
-  span {
-    background: #e74c3c;
-    height: 40px;
-    margin-right: 20px;
-    text-align: center;
-    color: #fff;
-    width: 0px;
-    display: inline-block;
-    transition: 0.2s linear;
-    opacity: 0;
-}
+span {
+  background: #e74c3c;
+  height: 40px;
+  margin-right: 20px;
+  text-align: center;
+  color: #fff;
+  width: 0px;
+  display: inline-block;
+  transition: 0.2s linear;
+  opacity: 0; }
 
 li:hover span {
   width: 40px;
-  opacity: 1.0;
-}
+  opacity: 1.0; }
 
 ul {
   width: 100%;
@@ -79,7 +77,7 @@ ul li:nth-child(2n) {
   padding: 0px 2% 0px 2%; }
 
 .listContainer {
-  height: auto;
+  height: 85%;
   max-height: 85%;
   width: 100%;
   padding: 0;

@@ -18,21 +18,11 @@ function init(){
         let ulList = document.querySelector("ul");
         let listLength = document.querySelectorAll("ul li");
         let liFirstValue = document.querySelector("ul li");
-        listItem.innerHTML = "<span><i class='fa fa-trash' aria-hidden='true'></span>" + newInput.value;
+        listItem.innerHTML = "<span><i class='fa fa-trash' aria-hidden='true'></i></span>" + newInput.value;
         if(event.keyCode === 13){
             if(newInput.value === ""){
                 return;
             }
-            /*
-            //A way to remove the inital list items without using forEach
-            if(newList.length === 0){
-                for(let i = 0; i < listLength.length; i++){
-                    ulList.removeChild(listLength[i]);   
-                    //ulList.removeChild(document.querySelector("ul li"));                   
-                }
-                newList.push(newInput.value);
-            }
-            */
             if(newList.length === 0){
                 listLength.forEach(function(e){
                     ulList.removeChild(e);
@@ -51,27 +41,26 @@ function init(){
         $(this).toggleClass("completed");
     });
 
-    //Click on X to delete Todos
-$("ul").on("click", "span", function(event){
-    $(this).parent().fadeOut(500,function(){
-        let listIndex = $(this).index();
-        $(this).remove();
-        //remove the first index in the newList array, if it matches the list item that is deleted
-        //used to update the list name when a new task is created.
-        if($(this).text() === newList[0]){
-            newList.shift();
-            listName.textContent = newList[0];
-                //Check to see if newList array is empty, if all the list items have been deleted, rename back to "Todo List"
-            if(newList.length === 0){
-                listName.textContent = "Todo List";
+     //Click on X to delete Todos
+    $("ul").on("click", "span", function(event){
+        $(this).parent().fadeOut(500,function(){
+            let listIndex = $(this).index();
+            $(this).remove();
+            //remove the first index in the newList array, if it matches the list item that is deleted
+            //used to update the list name when a new task is created.
+            if($(this).text() === newList[0]){
+                newList.shift();
+                listName.textContent = newList[0];
+                    //Check to see if newList array is empty, if all the list items have been deleted, rename back to "Todo List"
+                if(newList.length === 0){
+                    listName.textContent = "Todo List";
+                }
+            } else {
+                newList.splice(listIndex, 1);
             }
-        } else {
-            newList.splice(listIndex, 1);
-            console.log(newList);
-        }
+        });
+        event.stopPropagation();
     });
-    event.stopPropagation();
-  });
 
     //input Toggle
     $(".fa-plus").click(function(){
