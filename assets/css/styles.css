@@ -25,7 +25,6 @@ input:focus {
 
 ul span {
   background: #e74c3c;
-  height: 40px;
   margin-right: 20px;
   text-align: center;
   color: #fff;
@@ -36,7 +35,8 @@ ul span {
 
 ul li:hover span {
   width: 40px;
-  opacity: 1.0; }
+  opacity: 1.0;
+  line-height: 2rem; }
 
 ul {
   width: 100%;
@@ -48,7 +48,9 @@ ul {
   max-height: 100%; }
 
 ul li {
-  background-color: #fff; }
+  background-color: #fff;
+  alignt-items: center;
+  line-height: 2rem; }
 
 ul li:nth-child(2n) {
   background-color: lightblue; }

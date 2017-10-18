@@ -81,12 +81,11 @@ function init(){
     });
 
     
-    /*
-    //Active Field
-    $("#active").text();
-    //Completed Field
-    $("#completed").text();
-    */
+    function updateCompleted() {
+        let completedItems = document.querySelector("#completed");
+        console.log(completedItems);
+    }
+    
 }
 init();
 //})();
