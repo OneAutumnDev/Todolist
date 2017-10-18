@@ -11,6 +11,7 @@ function init(){
     let listName = document.querySelector(".listHeader h1");//Selector for the <h1>Todo List</h1>
     let newInput = document.querySelector(" input");//Selector for the input
     let newList = []; //array where new tasks are pushed after input press enter.
+    let activeItems = document.querySelector("#active");//Selector for the Active display at bottom
 
     //Entire keypress event that happens when the event key is pressed
     newInput.addEventListener("keypress", function(event){
@@ -26,12 +27,14 @@ function init(){
             if(newList.length === 0){
                 listLength.forEach(function(e){
                     ulList.removeChild(e);
+                    activeItems.textContent = newList.length;
                 });
             }
             ulList.appendChild(listItem);
             newList.push(newInput.value);
             newInput.value = "";
             listName.textContent = newList[0];   
+            activeItems.textContent = newList.length;
         }
     });
 
@@ -41,7 +44,7 @@ function init(){
         $(this).toggleClass("completed");
     });
 
-     //Click on X to delete Todos
+    //Click on X to delete Todos
     $("ul").on("click", "span", function(event){
         $(this).parent().fadeOut(500,function(){
             let listIndex = $(this).index();
@@ -51,12 +54,14 @@ function init(){
             if($(this).text() === newList[0]){
                 newList.shift();
                 listName.textContent = newList[0];
+                activeItems.textContent = newList.length;
                     //Check to see if newList array is empty, if all the list items have been deleted, rename back to "Todo List"
                 if(newList.length === 0){
                     listName.textContent = "Todo List";
                 }
             } else {
-                newList.splice(listIndex, 1);
+                    newList.splice(listIndex, 1);
+                    activeItems.textContent = newList.length;
             }
         });
         event.stopPropagation();
@@ -75,6 +80,7 @@ function init(){
         newInput.value = "";
     });
 
+    
     /*
     //Active Field
     $("#active").text();
