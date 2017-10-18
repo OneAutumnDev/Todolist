@@ -18,7 +18,7 @@ function init(){
         let ulList = document.querySelector("ul");
         let listLength = document.querySelectorAll("ul li");
         let liFirstValue = document.querySelector("ul li");
-        listItem.innerHTML = "<span>X </span>" + newInput.value;
+        listItem.innerHTML = "<span><i class='fa fa-trash' aria-hidden='true'></span>" + newInput.value;
         if(event.keyCode === 13){
             if(newInput.value === ""){
                 return;
@@ -50,6 +50,22 @@ function init(){
         //set to the ul so that the click listener is added to lis after they are created
         $(this).toggleClass("completed");
     });
+
+    //Click on X to delete Todos
+$("ul").on("click", "span", function(event){
+    $(this).parent().fadeOut(500,function(){
+      $(this).remove();
+      //remove the first index in the newList array
+      //used to update the list name when a new task is created.
+      newList.shift();
+      listName.textContent = newList[0];
+      //Check to see if newList array is empty, if all the list items have been deleted, rename back to "Todo List"
+      if(newList.length === 0){
+          listName.textContent = "Todo List";
+      }
+    });
+    event.stopPropagation();
+  });
 
     //input Toggle
     $(".fa-plus").click(function(){
