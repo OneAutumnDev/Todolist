@@ -45,6 +45,11 @@ function init(){
         }
     });
 
+    //Check off todos by clicking
+    $("ul").on("click", "li", function(){
+        $(this).toggleClass("completed");
+    });
+
     //input Toggle
     $(".fa-plus").click(function(){
         $("input[type='text']").fadeToggle()
@@ -57,7 +62,12 @@ function init(){
         listName.textContent = "Todo List";
     });
 
-
+    /*
+    //Active Field
+    $("#active").text();
+    //Completed Field
+    $("#completed").text();
+    */
 }
 init();
 //})();
