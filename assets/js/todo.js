@@ -42,6 +42,7 @@ function init(){
     $("ul").on("click", "li", function(){
         //set to the ul so that the click listener is added to lis after they are created
         $(this).toggleClass("completed");
+        updateCompleted();
     });
 
     //Click on X to delete Todos
@@ -80,12 +81,15 @@ function init(){
         newInput.value = "";
     });
 
-    
+    //Work in Progress for Completed Counter
     function updateCompleted() {
         let completedItems = document.querySelector("#completed");
-        console.log(completedItems);
+        let completedCounter = 0;
+        for(let i = 0; i < newList.length; i++){
+            let liFirstValue = document.querySelectorAll("li")[i];
+            console.log(liFirstValue);
+        }
     }
-    
 }
 init();
 //})();
