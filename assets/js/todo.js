@@ -47,6 +47,7 @@ function init(){
 
     //Check off todos by clicking
     $("ul").on("click", "li", function(){
+        //set to the ul so that the click listener is added to lis after they are created
         $(this).toggleClass("completed");
     });
 
@@ -60,6 +61,7 @@ function init(){
         newList = [];
         $("ul").empty();
         listName.textContent = "Todo List";
+        newInput.value = "";
     });
 
     /*
